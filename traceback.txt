@@ -1,0 +1,49 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+After initialization, but before game start.
+renpy.game.QuitException
+
+During handling of the above exception, another exception occurred:
+
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\jayan\\AppData\\Roaming/RenPy/Makethepuppyhappy-1794679781\\persistent'
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "renpy/main.py", line 596, in main
+    run(restart)
+    ~~~^^^^^^^^^
+  File "renpy/main.py", line 95, in run
+    raise renpy.game.QuitException()
+renpy.game.QuitException
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "renpy/bootstrap.py", line 401, in bootstrap
+    renpy.main.main()
+    ~~~~~~~~~~~~~~~^^
+  File "renpy/main.py", line 608, in main
+    renpy.persistent.update(True)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "renpy/persistent.py", line 461, in update
+    save()
+    ~~~~^^
+  File "renpy/persistent.py", line 484, in save
+    renpy.loadsave.location.save_persistent(compressed)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "renpy/savelocation.py", line 619, in save_persistent
+    l.save_persistent(data)
+    ~~~~~~~~~~~~~~~~~^^^^^^
+  File "renpy/savelocation.py", line 431, in save_persistent
+    safe_rename(fn_new, fn)
+    ~~~~~~~~~~~^^^^^^^^^^^^
+  File "renpy/loadsave.py", line 60, in safe_rename
+    os.unlink(new)
+    ~~~~~~~~~^^^^^
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\jayan\\AppData\\Roaming/RenPy/Makethepuppyhappy-1794679781\\persistent'
+
+Windows-11-10.0.26200-SP0 AMD64
+Ren'Py 8.5.3.26051504
+Make the puppy happy 1.0
+Sat Nov 14 17:39:10 2026
